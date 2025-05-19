@@ -1,9 +1,9 @@
 from fastapi import FastAPI
-from app.api.v1.endpoints import example
+from app.api.v1.endpoints import category
 
 app = FastAPI()
 
-app.include_router(example.router, prefix="/api/v1")
+app.include_router(category.router, prefix="/api/v1")
 
 @app.get("/")
 def read_root():
