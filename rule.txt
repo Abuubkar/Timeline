@@ -1,0 +1,2 @@
+# Timeline dependencies rule file
+1. Add packages before using them.
