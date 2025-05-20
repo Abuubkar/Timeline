@@ -14,8 +14,12 @@ export default async function Home() {
   let error: string | null = null;
   try {
     categories = await getCategories();
-  } catch (err: any) {
-    error = err.message || "Unknown error";
+  } catch (err) {
+    if (err instanceof Error) {
+      error = err.message;
+    } else {
+      error = "Unknown error";
+    }
   }
 
   return (
